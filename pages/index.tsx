@@ -5,7 +5,7 @@ export default function Home() {
   const [range, setRange] = useState<any>('0%')
   useEffect(() => {
     setTimeout(() => {
-      setRange('99%')
+      setRange('100%')
     }, 1000)
   }, [])
 
