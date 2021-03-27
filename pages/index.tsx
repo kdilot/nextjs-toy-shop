@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Router from 'next/router'
 
 export default function Home() {
   const [range, setRange] = useState<any>('0%')
