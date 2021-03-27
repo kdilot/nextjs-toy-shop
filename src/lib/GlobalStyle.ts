@@ -151,7 +151,6 @@ const GlobalStyle = createGlobalStyle<{ layoutType?: string }>`
   }
   body, button, input, select, table, textarea {
     /* font-size: 12px;*/
-    line-height: 16px; 
     color: #202020;
     font-family: NanumGothic, Righteous, sans-serif;
   }
