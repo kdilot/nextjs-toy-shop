@@ -26,7 +26,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  /* user-select: none; */
+  user-select: none;
 `
 
 const Title = styled.div<any>`
