@@ -3,6 +3,8 @@ import type { AppProps /*, AppContext */ } from 'next/app'
 import Head from 'next/head'
 import wrapper from '@store'
 import GlobalStyle from '@src/lib/GlobalStyle'
+import { ThemeProvider } from 'styled-components'
+import Theme from 'styles/color'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -12,7 +14,9 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <ThemeProvider theme={Theme['default']}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

@@ -34,14 +34,14 @@ const Title = styled.div<any>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #000;
+  color: ${(props) => props.theme.color[300]};
 
   &::before {
     content: attr(data-text);
     position: absolute;
     top: 0;
-    left: 0;
-    color: red;
+    left: 1px;
+    color: ${(props) => props.theme.color[500]};
     width: ${(props) => props.range};
     height: 100%;
     overflow: hidden;
