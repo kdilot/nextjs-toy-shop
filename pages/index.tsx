@@ -1,3 +1,4 @@
+import Wrapper from '@src/components/layoutWrapper'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
@@ -18,15 +19,15 @@ export default function Home() {
   )
 }
 
-const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  user-select: none;
-`
+// const Wrapper = styled.section`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   width: 100%;
+//   height: 100%;
+//   user-select: none;
+// `
 
 const Title = styled.div<any>`
   font-size: 7rem;
