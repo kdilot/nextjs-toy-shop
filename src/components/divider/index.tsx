@@ -7,7 +7,7 @@ const Divider = () => {
 const Wrapper = styled.div`
   width: 100%;
   height: 10px;
-  background: ${(props) => props.theme.color[100]};
+  background: ${(props) => props.theme.color[200]};
 `
 
 export default Divider
