@@ -11,7 +11,7 @@ const Header: React.FC<Props> = ({ title, isBack }) => {
   return (
     <Wrapper isBack={isBack}>
       {isBack && <Left>back</Left>}
-      <Title>{title}</Title>
+      <Title data-font="eng">{title}</Title>
     </Wrapper>
   )
 }

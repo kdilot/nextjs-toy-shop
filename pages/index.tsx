@@ -1,13 +1,18 @@
 import Header from '@src/components/header'
+import { useRouter } from 'next/dist/client/router'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 export default function Home() {
+  const router = useRouter()
   const [range, setRange] = useState<any>('0%')
   useEffect(() => {
     setTimeout(() => {
       setRange('100%')
     }, 1000)
+    setTimeout(() => {
+      router.push('/list')
+    }, 4500)
   }, [])
 
   return (
