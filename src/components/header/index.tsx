@@ -17,14 +17,16 @@ const Header: React.FC<Props> = ({ title, isBack }) => {
 }
 
 const Wrapper = styled.header<any>`
-  width: 100%;
+  width: 450px;
   height: 50px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  position: absolute;
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: ${(props) => (props.isBack ? 'space-between' : 'center')};
   align-items: center;
+  background: #fff;
+  z-index: 9999;
 `
 const Title = styled.div`
   width: 100%;
