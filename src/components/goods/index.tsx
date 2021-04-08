@@ -85,7 +85,7 @@ const ColumnWrapper = styled.article`
   flex-direction: row;
 
   & ~ & {
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
   }
 `
 
@@ -107,7 +107,7 @@ const ColumnTextWrapper = styled.article`
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
-  margin-left: 0.2rem;
+  margin-left: 0.5rem;
 `
 
 const ColumnTitle = styled.p`

@@ -17,7 +17,6 @@ export default function Home() {
 
   return (
     <>
-      <Header title="TEST" isBack />
       <Title data-text="MINT" range={range} data-font="eng">
         MINT
       </Title>
