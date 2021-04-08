@@ -7,15 +7,17 @@ const List: React.FC = () => {
   return (
     <>
       <Header title="MINT" />
-      <TopGoods>
-        <Goods />
-        <Goods />
-        <Goods />
-        <Goods />
-        <Goods />
-        <Goods />
-        <Goods />
-      </TopGoods>
+      <TopGoodsWrapper>
+        <TopGoods>
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+          <Goods />
+        </TopGoods>
+      </TopGoodsWrapper>
       <Divider />
       <BottomGoods>
         <Goods type="column" />
@@ -39,11 +41,17 @@ const List: React.FC = () => {
   )
 }
 
-const TopGoods = styled.article`
+const TopGoodsWrapper = styled.article`
   width: 100%;
   height: auto;
   display: flex;
   margin-top: 50px;
+  padding: 0 0.5rem;
+  padding-top: 0.5rem;
+`
+
+const TopGoods = styled.div`
+  display: flex;
   overflow: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -65,6 +73,8 @@ const BottomGoods = styled.article`
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
   }
+  padding: 0 0.5rem;
+  padding-top: 0.5rem;
 `
 
 export default List
