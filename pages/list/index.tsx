@@ -1,9 +1,19 @@
 import Divider from '@src/components/divider'
 import Goods from '@src/components/goods'
 import Header from '@src/components/header'
+import { useEffect, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import styled from 'styled-components'
 
 const List: React.FC = () => {
+  const [list, setList] = useState<number>(10)
+  const { ref, inView } = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      setList(list + 10)
+    }
+  }, [inView])
   return (
     <>
       <Header title="MINT" />
@@ -20,22 +30,10 @@ const List: React.FC = () => {
       </TopGoodsWrapper>
       <Divider />
       <BottomGoods>
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
-        <Goods type="column" />
+        {new Array(list).fill(0).map((_, index) => (
+          <Goods key={`goods_${index}`} type="column" />
+        ))}
+        <div ref={ref} />
       </BottomGoods>
     </>
   )
