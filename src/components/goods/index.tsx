@@ -4,24 +4,36 @@ interface Props {
   type?: 'row' | 'column'
 }
 
+const GOODS = {
+  name: '상품샘플 제목',
+  desc: '상품 설명입니다 상품 설명입니다'
+}
+
 const Goods: React.FC<Props> = ({ type = 'row' }) => {
+  const randomPrice = () => {
+    return (Math.floor(Math.random() * 20) + 5) * 1000
+  }
+  const price = randomPrice()
+  const discountPrice = price - (Math.floor(Math.random() * 30) + 1) * 100
   return type === 'row' ? (
     <RowWrapper>
       <RowImage data-font="eng">image</RowImage>
-      <RowTitle>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</RowTitle>
+      <RowTitle>{GOODS.name}</RowTitle>
+      <RowDescription>{GOODS.desc}</RowDescription>
       <RowPrice>
-        <span data-font="num">5,000</span>
-        <span data-font="num">4,600</span>
+        <span data-font="num">{price.toLocaleString('en')}</span>
+        <span data-font="num">{discountPrice.toLocaleString('en')}</span>
       </RowPrice>
     </RowWrapper>
   ) : (
     <ColumnWrapper>
       <ColumnImage data-font="eng">image</ColumnImage>
       <ColumnTextWrapper>
-        <ColumnTitle>제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</ColumnTitle>
+        <ColumnTitle>{GOODS.name}</ColumnTitle>
+        <ColumnDescription>{GOODS.desc}</ColumnDescription>
         <ColumnPrice>
-          <span data-font="num">5,000</span>
-          <span data-font="num">4,600</span>
+          <span data-font="num">{price.toLocaleString('en')}</span>
+          <span data-font="num">{discountPrice.toLocaleString('en')}</span>
         </ColumnPrice>
       </ColumnTextWrapper>
     </ColumnWrapper>
@@ -59,6 +71,17 @@ const RowTitle = styled.p`
   max-height: 28px;
   overflow: hidden;
   margin: 0.2rem 0;
+`
+
+const RowDescription = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 0.7rem;
+  width: 100%;
+  max-height: 28px;
+  overflow: hidden;
+  margin-bottom: 0.2rem;
+  opacity: 0.7;
 `
 
 const RowPrice = styled.div`
@@ -117,6 +140,15 @@ const ColumnTitle = styled.p`
   width: 100%;
   max-height: 28px;
   overflow: hidden;
+`
+
+const ColumnDescription = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 0.7rem;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.7;
 `
 
 const ColumnPrice = styled.div`
